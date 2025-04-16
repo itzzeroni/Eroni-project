@@ -1,0 +1,235 @@
+/*
+Theme Name: Hot Coffee
+Description: 3-column Wordpress theme.
+Author: Anna
+Author URI: http://ww-recipes.net
+*/
+
+
+body {
+ font: 12px Arial, Tahoma, Verdana, Sans-serifs;
+ background: url('images/background.png') repeat-x #90491e;
+ text-align: justify;
+ padding: 0px;
+ margin: 0px;
+ }
+#container {
+width: 100%
+}
+#wrap {
+ width: 960px;
+ padding: 0px;
+ margin: auto;
+ }
+#header {
+ height: 100px;
+ margin: auto;
+ padding: 30px 410px 0px 0px;
+ text-align: right;
+ color: #FFFFFF;
+ }
+#header h1 {
+ color: #FFFFFF;
+ font: 36px Georgia, "Times New Roman", Times, serifs;
+ margin: 0px;
+ padding: 0px;
+ }
+#navigation {
+ clear: both;
+ height: 30px;
+ font-weight: bold;
+ color: #FFFFFF;
+ font-size: 12px;
+ text-transform: uppercase;
+ }
+#navigation ul {
+ float: left;
+ list-style: none;
+ margin: 8px 0px 0px 10px;
+ padding: 0px;
+ }
+#navigation li {
+ float: left;
+ padding: 0px 20px 0px 0px;
+ }
+#content {
+ float: left;
+ width: 550px;
+ padding: 0px;
+ margin: 0px 0px 20px 0px;
+ display: block;
+ background: url('images/content_bottom.png') no-repeat bottom #FFFFFF;
+ }
+#content_top {
+ background: url('images/content_top.png') no-repeat center;
+ height: 30px;
+ }
+.entry_body {
+ padding: 10px 20px;
+ margin: 0px 0px 30px 0px;
+ line-height: 18px;
+ }
+#content h1 {
+ font: 26px Georgia, "Times New Roman", Times, serifs;
+ border-bottom: 2px dotted #F8994C;
+ color: #6E1F2E;
+ padding: 0px;
+ margin: 0px;
+ }
+#footer_link {
+ clear: both;
+ padding: 10px 20px;
+ height: 30px;
+ }
+.footerleft {
+ float: left;
+ }
+.footerright {
+ float: right;
+ }
+#content_break {
+ clear: both;
+ }
+#sidebar {
+ width: 410px;
+ padding: 380px 0px 50px 0px;
+ float: right;
+ margin: -100px 0px 0px 0px;
+ background: url('images/header.png') no-repeat center top #cd6829;
+ color: #FFFFFF;
+ }
+#sidebar_left {
+ float: left;
+ padding: 5px;
+ width: 190px;
+ }
+#sidebar_right {
+ float: right;
+ padding: 5px;
+ width: 190px;
+ }
+#sidebar h2 {
+ font: 20px Georgia, "Times New Roman", Times, serifs;
+ color: #FFFFFF;
+ border-bottom: 2px dotted #FFFFFF;
+ padding: 5px;
+ margin: 0px;
+ }
+#sidebar ul {
+ list-style: none;
+ margin: 0px;
+ padding: 5px;
+ }
+#sidebar li {
+ padding: 3px 0px;
+ }
+#footer {
+width: 100%;
+ clear: both;
+ height: 10px;
+ padding: 10px;
+ background: #682e27;
+ color: #FFFFFF;
+ font-size: 10px;
+ }
+#footer_text {
+ margin: auto;
+ width: 960px;
+ }
+.powered {
+ float: left;
+ }
+.sponsors {
+ float: right;
+ }
+
+.wp-smiley {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background: transparent;
+	}
+#content img {
+	border: 1px solid #F8994C;
+	}
+.wp-caption-text {
+	display: block;
+	font-size: 10px;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+	}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+.alignright {
+	float: right;
+	padding: 4px;
+	margin: 0px 0px 2px 7px;
+	display: inline;
+	}
+.alignleft {
+	float: left;
+	padding: 4px;
+	margin: 0px 7px 2px 0px;
+	display: inline;
+	}
+.pagetitle {
+	margin: 0px;
+	padding: 10px;
+	}
+.postmetadata {
+	clear: both;
+	padding: 10px;
+	border: 1px solid #CCCCCC;
+	}
+.alt {
+ background: #FFF8F9;
+	}
+#comment_box {
+ margin: 5px 20px;
+ }
+#comment_box ol {
+	padding: 0px;
+	list-style: none;
+	}
+#comment_box li {
+	padding: 10px;
+	list-style: none;
+	}
+.textwidget {
+	padding: 5px 0px 5px 5px;
+	margin: 0px 0px 10px 0px;
+	}
+#wp-calendar {
+	width: 100%;
+	margin: 2px 0px 20px 0px;
+	}
+#wp-calendar caption {
+	font-weight: bold;
+	padding: 5px 0px;
+	}
+#wp-calendar a {
+	text-decoration: underline;
+	}
+#wp-calendar td {
+	text-align: center;
+	}
+#content a {
+	text-decoration: none;
+	color: #a8442b;
+	}
+#content a:hover {
+	text-decoration: underline;
+	color: #682e27;
+	}
+a {
+	text-decoration: none;
+	color: #FFFFFF;
+	}
+a:hover {
+	text-decoration: underline;
+	color: #FFFFFF;
+	}
