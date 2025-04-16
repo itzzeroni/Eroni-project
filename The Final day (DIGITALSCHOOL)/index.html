@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INFOTECH</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+<!-- Header Section -->
+<header>
+  <div class="logo">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="INFOTECH Logo" class="logo-image">
+      <div class="logo-text">
+        <h1>INFOTECH</h1>
+        <div class="logo-subtext">Innovate. Build. Conquer.</div>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#build-tool">Build Your PC</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li class="dropdown">
+        <a href="#more">More <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+</header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h2>INFOTECH | <span class="typed-text"></span><span class="cursor">|</span></h2>
+        <p>Your one-stop destination for custom PC builds, servicing, and high-quality components.</p>
+        <a href="#build" class="btn">Start Building <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="our-services">
+    <div class="service service-left">
+      <h3>Service 1</h3>
+      <p>We offer high-quality custom PC builds tailored to your needs. Choose your components and get the best performance.</p>
+    </div>
+    <div class="service service-center">
+      <h3>Service 2</h3>
+      <p>Our expert technicians provide top-notch repair services to ensure your PC runs smoothly and efficiently.</p>
+    </div>
+    <div class="service service-right">
+      <h3>Service 3</h3>
+      <p>We provide fast and secure online support, ensuring that your issues are resolved promptly and effectively.</p>
+    </div>
+  </section>
+
+  <!-- Build Tool Section -->
+  <section class="build-tool">
+    <h2>Advanced PC Builder</h2>
+    <div class="component-grid">
+      <div class="component-selector">
+        <label for="cpu">CPU:</label>
+        <select id="cpu" onchange="updatePrice()">
+          <option value="200">Intel i7 - $200</option>
+          <option value="300">AMD Ryzen 9 - $300</option>
+          <option value="400">Intel i9 - $400</option>
+        </select>
+      </div>
+      <div class="component-selector">
+        <label for="gpu">GPU:</label>
+        <select id="gpu" onchange="updatePrice()">
+          <option value="400">NVIDIA RTX 3060 - $400</option>
+          <option value="500">NVIDIA RTX 3070 - $500</option>
+          <option value="600">NVIDIA RTX 3080 - $600</option>
+        </select>
+      </div>
+      <div class="component-selector">
+        <label for="ram">RAM:</label>
+        <select id="ram" onchange="updatePrice()">
+          <option value="80">16GB DDR4 - $80</option>
+          <option value="150">32GB DDR4 - $150</option>
+          <option value="250">64GB DDR4 - $250</option>
+        </select>
+      </div>
+      <div class="component-selector">
+        <label for="storage">Storage:</label>
+        <select id="storage" onchange="updatePrice()">
+          <option value="100">500GB SSD - $100</option>
+          <option value="150">1TB SSD - $150</option>
+          <option value="200">2TB SSD - $200</option>
+        </select>
+      </div>
+    </div>
+    <button id="calculate" onclick="updatePrice()">Calculate Price</button>
+    <button id="save-config">Save Configuration</button>
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    <div class="price-display">
+      Total Price: <span id="total-price">$0</span>
+    </div>
+    <p id="recommendation"></p>
+  </section>
+
+  <!-- Shop Section -->
+  <section id="shop" class="shop">
+    <h2>Shop Components</h2>
+    <input type="text" id="searchBar" placeholder="Search for components..." onkeyup="filterProducts()">
+    <div class="product-grid">
+      <div class="product" data-name="Intel Core i7" data-price="299">
+        <img src="intel7.jpg" alt="CPU">
+        <h3>Intel Core i7</h3>
+        <p>$299</p>
+        <button onclick="addToCart('Intel Core i7', 299)">Add to Cart</button>
+      </div>
+      <div class="product" data-name="NVIDIA RTX 3060" data-price="499">
+        <img src="gpu3.webp" alt="GPU">
+        <h3>NVIDIA RTX 3060</h3>
+        <p>$499</p>
+        <button onclick="addToCart('NVIDIA RTX 3060', 499)">Add to Cart</button>
+      </div>
+      <div class="product" data-name="16GB DDR4 RAM" data-price="99">
+        <img src="ram16.jpg" alt="RAM">
+        <h3>16GB DDR4 RAM</h3>
+        <p>$99</p>
+        <button onclick="addToCart('16GB DDR4 RAM', 99)">Add to Cart</button>
+      </div>
+    </div>
+    <div id="cart">
+      <h3>Shopping Cart</h3>
+      <ul id="cart-items"></ul>
+      <p>Total: $<span id="cart-total">0</span></p>
+      <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+<section id="blog" class="blog">
+  <h2>Latest Blog Posts</h2>
+  <div class="blog-posts">
+    <div class="post">
+      <img src="Top5.webp" alt="Top 5 GPUs">
+      <h3>Top 5 GPUs manifactures in 2025</h3>
+      <p>Intel Corporation.
+Advanced Micro Devices, Inc. ( AMD)
+Nvidia Corporation.
+Imagination Technologies Group.
+Samsung Electronics Co. Ltd.</p>
+      <div class="post-actions">
+        <button class="like-button"><i class="fas fa-heart"></i> Like</button>
+        <button class="share-button"><i class="fas fa-share"></i> Share</button>
+      </div>
+    </div>
+    <div class="post">
+      <img src="cpu.jpg" alt="Choosing the Right CPU">
+      <h3>How to Choose the Right CPU</h3>
+      <p>Speed (in GHz)
+Generation.
+TDP (lower the better) (power consumption)
+Number of cores.
+Cache (all three of them (L1,L2,l3)- more==better(faster))
+Thermals (It depends more on how it can be cooled still…)
+Threads (more the better)</p>
+      <div class="post-actions">
+        <button class="like-button"><i class="fas fa-heart"></i> Like</button>
+        <button class="share-button"><i class="fas fa-share"></i> Share</button>
+      </div>
+    </div>
+    <div class="post">
+      <img src="clean.png" alt="PC Maintenance Tips">
+      <h3>PC Maintenance Tips</h3>
+      <p>Wipe down the case with a slightly damp microfiber cloth.
+Use compressed air to clean vents and ports.
+Pay special attention to dust filters if your case has them.
+Clean fan grills thoroughly.</p>
+      <div class="post-actions">
+        <button class="like-button"><i class="fas fa-heart"></i> Like</button>
+        <button class="share-button"><i class="fas fa-share"></i> Share</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>About Us</h3>
+      <p>INFOTECH is your one-stop destination for custom PC builds, servicing, and high-quality components.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#build">Build Your PC</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/" class="social-link"><i class="fab fa-facebook"></i>facebook</a>
+        <a href="https://x.com/?lang=en" class="social-link"><i class="fab fa-twitter"></i>X</a>
+        <a href="https://www.instagram.com/" class="social-link"><i class="fab fa-instagram"></i>instagram</a>
+        
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Subscribe</h3>
+      <form id="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 INFOTECH. All rights reserved.</p>
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
